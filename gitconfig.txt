@@ -1,0 +1,41 @@
+# ADD LOCAL CONFIGURATION HERE
+[user]
+	name = Ivaylo Bratoev
+	email = ivaylo.bratoev@gmail.com
+[merge]
+	tool = p4merge
+	guitool = p4merge
+[diff]
+	guitool = winmerge
+	tool = winmerge
+[mergetool "p4merge"]
+	path = C:/Program Files/Perforce/p4merge.exe
+	cmd = \"C:/Program Files/Perforce/p4merge.exe\" \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[difftool "p4merge"]
+	path = C:/Program Files/Perforce/p4merge.exe
+[difftool "winmerge"]
+	path = C:/Program Files (x86)/WinMerge/winmergeu.exe
+	cmd = \"C:/Program Files (x86)/WinMerge/winmergeu.exe\" -e -u \"$LOCAL\" \"$REMOTE\"
+[difftool "diffmerge"]
+	path = C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe
+	cmd = \"C:/Program Files/SourceGear/Common/DiffMerge/sgdm.exe\" \"$LOCAL\" \"$REMOTE\"
+
+
+# DO NOT EDIT BELOW THIS LINE
+[core]
+	autocrlf = true
+[push]
+	default = simple
+[alias]
+	s = status
+	c = commit -m
+	ci = commit
+	ca = commit --amend
+	d = diff
+	dc = diff --cached
+	dt = difftool
+	dtc = difftool --cached
+	pl = "!f() { git fetch; git rebase --preserve-merges origin/`git rev-parse --abbrev-ref HEAD` ; }; f"
+	l = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(cyan)%an%Creset' --abbrev-commit --date=relative
+	lga = log --graph --oneline --all --decorate
+	out = log origin..HEAD
