@@ -1,6 +1,6 @@
 # ADD LOCAL CONFIGURATION HERE
 [user]
-	name = Ivaylo Bratoev
+	name = ibratoev
 	email = ivaylo.bratoev@gmail.com
 [merge]
 	tool = p4merge
