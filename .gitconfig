@@ -1,0 +1,31 @@
+[user]
+name = Ivaylo Bratoev
+email = ivo@st6.io
+# signingkey = D698DD78F4E4BBA6
+
+[merge]
+tool = vscode
+
+[mergetool "vscode"]
+cmd = code --wait $MERGED
+
+[diff]
+tool = vscode
+
+[difftool "vscode"]
+cmd = code --wait --diff $LOCAL $REMOTE
+
+[mergetool]
+keepBackup = false
+
+[commit]
+gpgsign = true
+
+[gpg]
+# program = /usr/local/MacGPG2/bin/gpg2
+
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
